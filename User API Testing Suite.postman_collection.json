@@ -64,7 +64,9 @@
               "    const jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.body).to.include(\"Hello everyone\");\r",
               "});\r",
-              ""
+              "pm.test(\"Response time is less than 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -112,6 +114,9 @@
               "pm.test(\"Body matches string\", function () {\r",
               "    const jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.body).to.include(\"Updated body\");\r",
+              "});\r",
+              "pm.test(\"Response time is less than 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -161,6 +166,9 @@
               "pm.test(\"Response body is empty object\", function () {\r",
               "    const responseBody = pm.response.json();\r",
               "    pm.expect(responseBody).to.eql({});\r",
+              "});\r",
+              "pm.test(\"Response time is less than 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
               "});"
             ],
             "type": "text/javascript",
